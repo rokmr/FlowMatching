@@ -8,7 +8,7 @@
             "version": "3.10"
         }
     },
-    "postCreateCommand": "conda env create -f environment.yml && echo 'conda activate flow_matching' >> ~/.bashrc",
+    "postCreateCommand": "conda env create -f environment.yml && conda init bash && source ~/.bashrc && conda activate flow_matching",
     "customizations": {
         "vscode": {
             "extensions": [
