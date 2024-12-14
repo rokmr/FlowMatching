@@ -1,5 +1,11 @@
 # FlowMatching
 
+# Environment Setup
+```bash
+conda env create -f environment.yml
+conda activate flow_matching
+```
+
 # Setup for original [flowmatching](https://github.com/facebookresearch/flow_matching.git)
 First time setup
 ```bash
