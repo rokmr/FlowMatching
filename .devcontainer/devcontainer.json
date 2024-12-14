@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "pip3 install --user -r requirements.txt",
+	"postCreateCommand": "conda env create -f environment.yml && conda init bash && source ~/.bashrc && conda activate flow_matching",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
