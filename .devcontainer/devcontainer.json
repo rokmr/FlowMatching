@@ -1,0 +1,25 @@
+{
+    "name": "Flow Matching Development",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "3.10"
+        }
+    },
+    "postCreateCommand": "conda env create -f environment.yml && echo 'conda activate flow_matching' >> ~/.bashrc",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-toolsai.jupyter"
+            ],
+            "settings": {
+                "python.defaultInterpreterPath": "/opt/conda/envs/flow_matching/bin/python"
+            }
+        }
+    },
+    "remoteUser": "vscode"
+}
