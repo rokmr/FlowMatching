@@ -18,5 +18,5 @@
 	},
   
 	// Optional post-create commands (e.g., additional setup)
-	// "postCreateCommand": "conda activate flow_matching && pip install --upgrade pip"
+	"postCreateCommand": "conda init bash && source ~/.bashrc && conda activate flow_matching",
   }
