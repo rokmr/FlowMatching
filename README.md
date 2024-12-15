@@ -1,5 +1,12 @@
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/rokmr/FlowMatching?quickstart=1)
+[![Notes](https://img.shields.io/badge/Keynote-blue?style=flat&logo=slides&logoColor=white&logoSize=amg&color=%23ADADFF)](https://www.icloud.com/keynote/0e5fXZn-TsuniKe6LMa7j-gxw#FlowMatching) [![Open in GitHub Codespaces](https://img.shields.io/badge/Open_in_GitHub_Codespaces-blue?style=flat&logo=github&logoColor=white&logoSize=amg&color=%23222222)](https://codespaces.new/rokmr/FlowMatching?quickstart=1)
+
 # FlowMatching
+
+# Github codespace
+
+```bash
+conda init bash && source ~/.bashrc && conda activate flow_matching
+```
 
 # Environment Setup
 ```bash
@@ -19,4 +26,4 @@ git subtree pull --prefix=external/flow_matching https://github.com/facebookrese
 ```
 
 # References
-Flow Matching Guide and Code || [paper](https://arxiv.org/pdf/2412.06264) || [code](https://github.com/facebookresearch/flow_matching) || [page] (https://facebookresearch.github.io/flow_matching/)
+Flow Matching Guide and Code || [paper](https://arxiv.org/pdf/2412.06264) || [code](https://github.com/facebookresearch/flow_matching) || [page](https://facebookresearch.github.io/flow_matching/)
