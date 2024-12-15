@@ -11,8 +11,11 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 
+	// Use 'initializeCommand' to run commands before the container is created.
+	"initializeCommand": "conda env create -f environment.yml && conda init bash && source ~/.bashrc && conda activate flow_matching",
+
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "conda env create -f environment.yml && conda init bash && source ~/.bashrc && conda activate flow_matching",
+	// "postCreateCommand": "conda env create -f environment.yml && conda init bash && source ~/.bashrc && conda activate flow_matching",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
