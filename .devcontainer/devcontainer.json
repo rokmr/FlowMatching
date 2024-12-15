@@ -12,7 +12,7 @@
 	// "forwardPorts": [],
 
 	// Use 'initializeCommand' to run commands before the container is created.
-	"initializeCommand": "conda env create -f environment.yml && conda init bash && source ~/.bashrc && conda activate flow_matching",
+	"initializeCommand": "conda init bash && source ~/.bashrc && conda env create -f environment.yml && conda activate flow_matching",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "conda env create -f environment.yml && conda init bash && source ~/.bashrc && conda activate flow_matching",
