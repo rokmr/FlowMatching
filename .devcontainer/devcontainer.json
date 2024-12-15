@@ -1,25 +1,22 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/python
 {
 	"name": "flow_matching",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/universal:2",
-
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-	// Use 'initializeCommand' to run commands before the container is created.
-	"initializeCommand": "conda init bash && source ~/.bashrc && conda env create -f environment.yml && conda activate flow_matching",
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "conda env create -f environment.yml && conda init bash && source ~/.bashrc && conda activate flow_matching",
-
-	// Configure tool-specific properties.
-	// "customizations": {},
-
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
-}
+	"image": "mcr.microsoft.com/devcontainers/universal:2", // Pre-built image with Miniconda
+  
+	// Optional features
+	// "features": {
+	//   "codespaces": {} // Enable code-specific features
+	// },
+  
+	// Optional port forwarding
+	// "forwardPorts": [
+	//   { "localPort": 8000, "containerPort": 5000 } // Example: map local port 8000 to container port 5000
+	// ],
+  
+	// Pre-populate Conda environment during build (recommended)
+	"build": {
+	  "dockerfile": "Dockerfile" // Reference your Dockerfile path
+	},
+  
+	// Optional post-create commands (e.g., additional setup)
+	// "postCreateCommand": "conda activate flow_matching && pip install --upgrade pip"
+  }
