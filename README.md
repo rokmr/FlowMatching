@@ -19,4 +19,4 @@ git subtree pull --prefix=external/flow_matching https://github.com/facebookrese
 ```
 
 # References
-Flow Matching Guide and Code || [paper](https://arxiv.org/pdf/2412.06264) || [code](https://github.com/facebookresearch/flow_matching)
+Flow Matching Guide and Code || [paper](https://arxiv.org/pdf/2412.06264) || [code](https://github.com/facebookresearch/flow_matching) || [page] (https://facebookresearch.github.io/flow_matching/)
