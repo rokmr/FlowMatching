@@ -41,7 +41,7 @@ venv.bak/
 
 # Jupyter Notebook
 .ipynb_checkpoints
-*.ipynb
+
 
 # Model files and data
 *.pth
