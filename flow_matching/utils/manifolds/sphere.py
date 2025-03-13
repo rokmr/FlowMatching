@@ -24,7 +24,7 @@ class Sphere(Manifold):
         return torch.where(cond, exp, retr)
 
     def logmap(self, x: Tensor, y: Tensor) -> Tensor:
-        u = self.proju(x, y - x)
+        u = self.proju(x, y - x) # Project y-x onto tangent space at x
         dist = self.dist(x, y, keepdim=True)
         cond = dist.gt(self.EPS[x.dtype])
         result = torch.where(
@@ -38,6 +38,36 @@ class Sphere(Manifold):
         return x / x.norm(dim=-1, keepdim=True)
 
     def proju(self, x: Tensor, u: Tensor) -> Tensor:
+        """Project vector u onto the tangent space at point x on the sphere.
+        
+        This implements the projection formula for spherical manifolds:
+        proj_x(u) = u - <x,u>x
+
+        where <x,u> is the inner product between x and u. This removes any component
+        of u that points in the radial direction (parallel to x), leaving only the
+        tangential components.
+
+        Example:
+
+        u = u cos \theta  i + u sin \theta j
+        u = u_i + u_j 
+
+        u_i : Parallel to x
+        u_j : Tangential to x
+
+        # Remove parallel component from u
+        result = u - u_i 
+        Find u_i
+
+        u_i = (x * u).sum(dim=-1, keepdim=True) * x # x is unit vector along parallel direction
+        
+        Args:
+            x (Tensor): point on the sphere (normalized to unit length)
+            u (Tensor): vector to be projected onto tangent space at x
+
+        Returns:
+            Tensor: projected vector in the tangent space at x
+        """
         return u - (x * u).sum(dim=-1, keepdim=True) * x
 
     def dist(self, x: Tensor, y: Tensor, *, keepdim=False) -> Tensor:
